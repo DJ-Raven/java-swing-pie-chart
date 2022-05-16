@@ -16,7 +16,7 @@ public class Test extends javax.swing.JFrame {
     public Test() {
         initComponents();
         getContentPane().setBackground(new Color(255, 255, 255));
-        pieChart1.setChartType(PieChart.PeiChartType.DEFAULT);
+        pieChart1.setChartType(PieChart.PeiChartType.DONUT_CHART);
         pieChart1.addData(new ModelPieChart("Tigher", 150, new Color(23, 126, 238)));
         pieChart1.addData(new ModelPieChart("ABC", 100, new Color(221, 65, 65)));
         pieChart1.addData(new ModelPieChart("Coca", 80, new Color(47, 157, 64)));

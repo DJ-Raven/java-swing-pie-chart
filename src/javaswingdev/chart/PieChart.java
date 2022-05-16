@@ -26,7 +26,7 @@ public class PieChart extends JComponent {
 
     private final List<ModelPieChart> models;
     private final DecimalFormat format = new DecimalFormat("#,##0.#");
-    private PeiChartType chartType = PeiChartType.DONUT_CHART;
+    private PeiChartType chartType = PeiChartType.DEFAULT;
     private int selectedIndex = -1;
     private int hoverIndex = -1;
     private float borderHover = 0.05f;
@@ -62,10 +62,6 @@ public class PieChart extends JComponent {
         };
         addMouseListener(mouseEvent);
         addMouseMotionListener(mouseEvent);
-        models.add(new ModelPieChart("Tigher", 150, new Color(23, 126, 238)));
-        models.add(new ModelPieChart("ABC", 100, new Color(221, 65, 65)));
-        models.add(new ModelPieChart("Coca", 80, new Color(47, 157, 64)));
-        models.add(new ModelPieChart("Vita", 60, new Color(196, 151, 58)));
     }
 
     @Override
@@ -272,6 +268,15 @@ public class PieChart extends JComponent {
     public void setChartType(PeiChartType chartType) {
         this.chartType = chartType;
         repaint();
+    }
+
+    public void clearData() {
+        models.clear();
+        repaint();
+    }
+
+    public void addData(ModelPieChart data) {
+        models.add(data);
     }
 
     public static enum PeiChartType {

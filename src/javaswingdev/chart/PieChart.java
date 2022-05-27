@@ -105,6 +105,12 @@ public class PieChart extends JComponent {
             g2.fill(area);
             g2.setColor(Color.WHITE);
             g2.draw(area);
+            drawAngle -= angle;
+        }
+        drawAngle = 90;
+        for (int i = 0; i < models.size(); i++) {
+            ModelPieChart data = models.get(i);
+            double angle = data.getValues() * 360 / totalValue;
             //  Draw Text
             double textSize = size / 2 * 0.75f;
             double textAngle = -(drawAngle - angle / 2);
@@ -116,6 +122,7 @@ public class PieChart extends JComponent {
             Rectangle2D r = fm.getStringBounds(text, g2);
             double textX = centerX + cosX * textSize - r.getWidth() / 2;
             double textY = centerY + sinY * textSize + fm.getAscent() / 2;
+            g2.setColor(Color.WHITE);
             g2.drawString(text, (float) textX, (float) textY);
             //  Draw label
             if (hoverIndex == i) {
@@ -127,6 +134,7 @@ public class PieChart extends JComponent {
             }
             drawAngle -= angle;
         }
+
         g2.dispose();
         super.paintComponent(g);
     }
@@ -135,8 +143,8 @@ public class PieChart extends JComponent {
         float fontSize = (float) (getFont().getSize() * size * 0.0035f);
         boolean up = !(angle > 0 && angle < 180);
         double space = size * 0.03f;
-        double spaceV = 5;
-        double paceH = 8;
+        double spaceV = size * 0.01f;
+        double paceH = size * 0.01f;
         FontMetrics fm1 = g2.getFontMetrics(getFont().deriveFont(Font.PLAIN, fontSize));
         FontMetrics fm2 = g2.getFontMetrics(getFont().deriveFont(Font.BOLD, fontSize));
         Rectangle2D r1 = fm1.getStringBounds(text, g2);
@@ -148,7 +156,7 @@ public class PieChart extends JComponent {
         g2.setColor(Color.WHITE);
         RoundRectangle2D rec = new RoundRectangle2D.Double(recX, recY, width, height, 5, 5);
         g2.fill(rec);
-        g2.setColor(new Color(200, 200, 200));
+        g2.setColor(new Color(235, 235, 235));
         g2.draw(rec);
         g2.setColor(getForeground());
         recX += paceH;

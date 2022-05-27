@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/D:/Raven/git/img/java-swing-pie-chart/src/javaswingdev/chart/ModelPieChart.java</file>
+            <file>file:/D:/Raven/git/img/java-swing-pie-chart/test/test/Test.java</file>
+            <file>file:/D:/Raven/git/img/java-swing-pie-chart/src/javaswingdev/chart/PieChart.java</file>
+        </group>
+>>>>>>> deb5133597410d584fc61f70ee6592cff0127d94
     </open-files>
 </project-private>
